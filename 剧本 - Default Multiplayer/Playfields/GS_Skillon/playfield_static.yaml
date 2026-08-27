@@ -1,0 +1,579 @@
+---
+# Playfield Configuration
+# IMPORTANT: YAML files use spaces as indentation. Please don't use TABs - tab indentation is forbidden: http://yaml.org/faq.html
+
+Description: "\u96BE\u5EA6\uFF1A\u4E2D\u7B49\u81F3\u9AD8\u7B49\n\u6559\u7A0B\uFF1A\u65E0\n\u4EFB\u52A1\uFF1A\u8352\u5E9F\u7535\u6E90\uFF08\u6D77\u76D7\u6C0F\u65CF\uFF09\n\n\u5982\u679C\u4F60\u80FD\u5728\u8FD9\u9897\u66FE\u7528\u4E8E\u6B66\u5668\u6D4B\u8BD5\u3001\u5982\u4ECA\u906D\u53D7\u653E\u5C04\u6027\u6C61\u67D3\u7684\u661F\u7403\u4E0A\u5E78\u5B58\u6700\u521D\u7684\u51E0\u4E2A\u5C0F\u65F6\uFF0C\u53BB\u5BFB\u627E\u5F17\u4F26\u6C0F\u65CF\u7684\u62C9\u00B7\u683C\u5170\u5FB7\u00B7\u8FC8\u62C9\u53F7\u3002\u4E5F\u8BB8\u4ED6\u4EEC\u5728\u90A3\u91CC\u9700\u8981\u4F60\u7684\u5E2E\u52A9\uFF01\u6216\u8005\u5176\u4ED6\u4EBA\u9700\u8981\uFF1F\u5230\u65F6\u5019\u4F60\u5C31\u77E5\u9053\u4E86..."
+
+# Description: "Hundreds of years of exploitation of the natural resources of this moon have left their mark. While the natural ore deposits have been completely exhausted, ruins have remained. Slowly decaying in the sweltering heat of an unbreathable atmosphere, dangerous creatures use them to trap their prey!\n\nSuitable for advanced/Experts"
+
+PlanetClass: Desert Barren
+PlanetType: DesertBarrenStarter
+PlayfieldType: Moon
+Difficulty: 3
+
+LandClaimZone: Device
+
+# ==============================================================
+# Special parameters:
+# ==============================================================
+
+#AllowBlueprintSV: False         # Dis-allow to spawn SV Blueprint in this playfield, default is True
+#AllowBlueprintCV: False         # Dis-allow to spawn CV Blueprint in this playfield, default is True
+#AllowBlueprintBA: False         # Dis-allow to spawn BA Blueprint in this playfield, default is True
+#AllowBlueprintHV: False         # Dis-allow to spawn HV Blueprint in this playfield, default is True
+
+Seed: 575561                    # Integer [1, 999999] If set overwrites main Seed 
+UseFixed: True  			   	   # If set to True uses fixed POIs + resources in Survival mode (per default set to False). Can be used together with UseRandom
+UseRandom: True				   # If set to True uses random POIs + resources in Survival mode (per default set to True). Can be used together with UseFixed
+#IndestructibleTerrain: True     # If set to True terrain on this playfield will be indestructible
+
+# ==============================================================
+# Special Effects 
+SpecialEffectsLocal:
+  - Name: FireFliesRed
+    Biome: [ Water, ShallowWater, Shore ]
+    Time: Night
+    MaxHeight: 40
+  - Name: FireFliesGreenFew
+    Biome: [ Plains, Sand, Flowers, FlowersEdge, Wadi, DustBowl ]
+    Time: Night
+    MaxHeight: 150
+  - Name: Pollen
+    Biome: [ Plains, DustBowl, Plantation, Flowers, FlowersEdge, Oasis ]
+    Time: Day
+    MaxHeight: 150
+  - Name: FireFliesGreen
+    Biome: [ Oasis, Plantation ]
+    Time: Night
+    MaxHeight: 150
+
+SpecialEffectsGlobal:
+# Weather
+  - Name: Clear
+    Type: Weather
+    InitialDelay: 0
+    Delay: 2
+    Lifetime: 1200
+  - Name: HeatWave
+    Type: Weather
+    InitialDelay: 36
+    Delay: 12
+    Lifetime: 600
+  - Name: FireRain
+    Type: Weather
+    InitialDelay: 72
+    Delay: 24
+    Lifetime: 300
+  # - Name: Wind
+    # Type: Weather
+    # InitialDelay: 20
+    # Delay: 8
+    # Lifetime: 500
+# Global Effects
+  - Name: BirdFlocksVultures
+    Biome: [ Dunes, Plains, Mountains, Water, Flowers, Plantation ]
+    Time: Day
+    InitialDelay: 2
+    Delay: 4
+    Lifetime: 600
+    PlyDist: 50
+    SpawnY: 40
+    Struct: True
+# ==================
+
+# Atmosphere and Sky
+AtmosphereEnabled: True
+AtmosphereColor: "0.77, 0.57, 0.44"  
+SkyColor: "0.90, 0.3, 0.3"
+SkyHorizonColor: "1, 0.2, 0"
+AtmosphereParams: [5, 1.5]       
+
+# Light
+DayLightIntensity: 1.4
+NightLightIntensity: 0.3
+LightZenithColor: "1, 0.7, 0.7"
+LightHorizonColor: "1, 0.5, 0"
+NightLightColor: "0.78, 0.78, 1"
+DayShadowStrength: 1
+NightShadowStrength: 1
+
+# Sun
+SunFlare: EnvironmentalEffects/SunFlareBlue
+
+# Fog
+AtmosphereFog: 0.35
+FogColor: "0.8, 0.4, 0.2"
+FogCloudIntensity: 0.8
+GroundFogIntensity: 0.05
+GroundFogHeight: 60
+
+# Clouds & Wind
+CloudsDensity: 0.1
+CloudsSharpness: 0.05
+CloudsOpacity: 0.3
+
+CloudsBrightness: 0.7
+CloudsZenithColor: "0.85, 0.36, 0.20" 
+CloudsHorizonColor: "0.2, 0.04, 0.03" 
+CloudsNightZenithColor: "0.03, 0.012, 0.012"
+CloudsNightHorizonColor: "0.03, 0.012, 0.012"
+
+WindSpeed: 3
+
+
+# ==============================================================
+
+### Resource Deposits
+RandomResources:
+
+    - Name: CarbonResource
+     # Biome: [ Heath, Savanna, Hills, Plains, SavannaEdge, Grassland_1, Grassland ]
+      IsScalingCount: True   # Medium Planet: 6-8 Deposits, Large planet 9-12
+      CountMinMax: [ 1, 2 ]  # (was [ 5, 8 ] unscaled)
+      SizeMinMax: [ 3, 4 ]
+      DepthMinMax: [ 0, 3 ]
+      DroneProb: 0.2
+      MaxDroneCount: 1
+    # - Name: IronResource
+      # Biome: [ Sand, Dunes ]
+      # CountMinMax: [ 2, 3 ] 
+      # IsScalingCount: True
+      # SizeMinMax: [ 5, 7 ] 
+      # DepthMinMax: [ 5, 15 ] 
+      # DroneProb: 0.2 
+
+    # - Name: CopperResource
+      # Biome: [ Plateau ]
+      # CountMinMax: [ 1, 3 ]
+      # IsScalingCount: True
+      # SizeMinMax: [ 4, 6 ]
+      # DepthMinMax: [ 10, 15 ] 
+      # DroneProb: 0.3
+
+    # - Name: SiliconResource           # =========== ADJUST TEX in TERRAIN.ECF! ===========
+      # Biome: [ Sand, Dunes ]
+      # CountMinMax: [ 3, 4 ]
+      # IsScalingCount: True
+      # SizeMinMax: [ 3, 6 ]
+      # DepthMinMax: [ 15, 20 ] 
+      # DroneProb: 0.8
+      # MaxDroneCount: 4 
+
+    - Name: PromethiumResource
+    #  Biome: [ Mountains, LowMountains, LowMountains_1 ]
+      CountMinMax: [ 2, 3 ]
+      IsScalingCount: True
+      SizeMinMax: [ 3, 5 ]
+      DroneProb: 0.8
+      DepthMinMax: [ 0, 1 ]
+      DistTypeCylinder:
+        MaxRadius: 13
+        YVariance: 10
+
+    - Name: NeodymiumResource
+    #  Biome: [ Mountains, LowMountains, LowMountains_1 ]
+      CountMinMax: [ 2, 3 ]
+      IsScalingCount: True
+      SizeMinMax: [ 3, 5 ]
+      DroneProb: 0.8
+      DepthMinMax: [ 0, 1 ]
+      # DistTypeCylinder:
+        # MaxRadius: 13
+        # YVariance: 10
+
+
+### Resource Asteroids
+AsteroidResources:
+     # - Name: IronResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: SiliconResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     # - Name: CopperResource
+       # Threshold: 0.2
+       # Amount: 0.2
+     - Name: PromethiumResource
+       Threshold: 0.2
+       Amount: 0.2
+
+POIs:
+    Random:
+        - GroupName: NullPOI
+          CountMinMax: [ 1, 1 ]
+          SpawnPOINear: [START]
+          SpawnPOINearDistance: 10
+          IsImportant: True
+          SpawnResource: ["IronResource:1-1", "CopperResource:1-1", "SiliconResource:1-1" ]
+          SpawnResourceRange: [300, 400]
+
+        - GroupName: Wreckage
+          Faction: Alien          
+          CountMinMax: [ 6, 20 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+              
+        - GroupName: CrashedShip
+          Faction: None          
+          CountMinMax: [ 4, 6 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+              
+        - GroupName: Junksite
+          Faction: None          
+          CountMinMax: [ 6, 25 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+        - GroupName: JunkT2
+          Faction: None          
+          CountMinMax: [ 6, 25 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+            - Key: PersonalContainer
+              Value: "AntiRadiationOintment:1"
+              
+        - GroupName: JunkT1
+          IsImportant: True
+          Faction: None          
+          CountMinMax: [ 1, 20 ]  
+          SpawnPOINear: [ TOTObeliskTemperate ]
+          SpawnPOINearRange: [50,200]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+          
+        - GroupName: Ruins
+          Faction: None          
+          CountMinMax: [ 1, 20 ]
+          Properties: 
+            - Key: MapMarker
+              Value: Neutral
+            - Key: RegenAfter
+              Value: 360
+
+    FixedPlayerStart:
+        - Mode: Debug
+          Armor: ArmorLight
+          Pos: [ 0, 147, 0 ]
+          RotY: 160 
+
+        - Mode: Survival
+          Armor: ArmorLight
+          Spawn: EscapePod
+          Pos: [0, 70, 0]
+          RotY: 160
+          Status: [ 
+           "Food: 400, Health: 400", 
+           "Food: 250, Health: 250", 
+           "Food: 150, Health: 150", 
+           "#FreshStart:Food: 250, Health: 250" 
+          ]
+          Items: [ 
+           "SurvivalTool:1, Flashlight:1, SurvivalTent:1, RadarSuitT1:1, PDA:1, Bandages:3, PowerBar:3", 
+           "SurvivalTool:1, Flashlight:1, SurvivalTent:1, RadarSuitT1:1, PDA:1, Bandages:2, PowerBar:2", 
+           "SurvivalTool:1, Flashlight:1, SurvivalTent:1, RadarSuitT1:1, PDA:1, Bandages:1, PowerBar:1", 
+           "#FreshStart: SurvivalTool:1, Flashlight:1, SurvivalTent:1, RadarSuitT1:1, PDA:1, Bandages:1, PowerBar:1" 
+          ]
+# ==============================================================
+# ==============================================================
+### Drones
+
+DroneBaseSetup: 
+  DroneBases:                               
+    - DroneSetupID: DroneBaseSkillon 
+      Stock:
+        - Name: DroneBatteredCannon 
+          Amount: Infinite
+          Type: FighterDrone 
+
+        # - Name: DroneSmallFast01Rocket
+          # Amount: Infinite
+          # Type: FighterDrone
+
+        # - Name: DroneTroopsTransport
+          # Amount: Infinite
+          # Type: TroopTransport
+
+        # - Name: RipperDog
+          # Amount: 150
+          # Type: GroundTroop
+
+DroneSpawning:
+    Random:
+      - Name: GlidingOverseer                    # Gliding Overseer using Drone AI and cannot be set up per biome
+        DronesMinMax: [ 1, 3 ]  
+        Faction: Alien
+        CenterX: 0                                     # Does not need a RADIUS set up. Will roam the whole planet. (Hardcoded)
+      - Name: DroneBatteredCannon                #Does not work without dronebase
+        DronesMinMax: [ 9, 10 ]
+        Faction: Alien
+        CenterX: 500 
+        Radius: 6000        
+
+
+# ==============================================================
+# Pole
+
+# Water
+# ShallowWater
+# Shore
+
+# Oasis
+# Flowers
+# FlowersEdge
+# Plantation
+
+# DustBowl
+# SandDrift
+# Dunes
+# Sand
+
+# Technical_Height
+
+# Plateau
+# LowMountains
+# LowMountains_1
+# Mountains
+
+# Nest
+# LargeCrater
+
+# Wadi
+# Plains
+# =============================================================
+
+SpawnRateZones:
+   # - SpawnAt: [TS_Planet]    #'Peaceful' zone
+     # Radius: 400
+     # RadiusRandom: 100
+     # RateMultiplyerCenter: 0.0
+     # RateMultiplyerEdge: 1.0
+     # AffectEnemies: true
+     # Color: "0.0, 1.0, 0.0, 0.7"
+
+# POIS: SkillonPiratesMission, SkillonLambdaLabs, SkillonDestroyedBase, SkillonVesselYard
+# TOT POI: TOTObeliskBarren, TOTCampObeliskBarren, TOTFontC, TOTCampFontBarren, TOTActivator
+# Randoms: ScraperPileMain, ScraperPile, Wreckage, CrashedShip, Junksite, JunkT2, JunkT1, Ruins
+SpawnZones:
+   - SpawnAt: [ScraperPileMain, ScraperPile, Wreckage, CrashedShip, Junksite, JunkT2, JunkT1, Ruins]
+   #  BiomesExcluded: [ LowMountains, LowMountains_1, Mountains ]
+     Radius: 175
+     RadiusRandom: 50
+     RateMultiplyerCenter: 1.0
+     RateMultiplyerEdge: 1.0
+     Color: "1.0, 1.0, 1.0, 1.0"
+  #   SpawnOnlyIfPoiIsAlien: true
+     Entities:
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [0, 1]
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [0, 1]
+       - Names: [ScraperDronesBlue, ScraperDronesArmy]
+         Biomes: [Any]
+         Amount: 25
+         Period: Always
+         DelayMinMax: [0, 1]
+
+# ____________
+# Available Biomes: 
+# Pole
+
+# Water
+# ShallowWater
+# Shore
+
+# Oasis
+# Flowers
+# FlowersEdge
+# Plantation
+
+# DustBowl
+# SandDrift
+# Dunes
+# Sand
+
+# Technical_Height
+
+# Plateau
+# LowMountains
+# LowMountains_1
+# Mountains
+
+# Nest
+# LargeCrater
+
+# Wadi
+# Plains
+
+### Creatures
+CreatureSpawning:
+
+    - Biomes: [Crashsite] 
+      Entities: 
+       - Name: ScraperDronesMixed
+         Period: Always
+         Amount: 10
+         DelayMinMax: [0, 1]
+         Color: "0, 0, 1.0"
+       - Name: CaveWormsGrey
+         Period: Always
+         Amount: 15
+         DelayMinMax: [0, 1]
+         Color: "0, 0, 1.0"
+      
+    - Biomes: [Nest] 
+      Entities:
+        - Name: Spiders03     
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+          Color: "1.0, 1.0, 0.3"
+        - Name: Spiders02   
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+          Color: "1.0, 1.0, 0.7"
+
+    - Biomes: [LargeCrater]
+      Entities:
+        # - Name: AlienBugs01
+          # Period: Day
+          # Amount: 12
+          # DelayMinMax: [20, 24]
+        - Name: Otyughs
+          Period: Night
+          Amount: 12
+          DelayMinMax: [0, 1]
+        - Name: CaveWormsGrey
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+        - Name: ScraperDronesMixed 
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+
+    - Biomes: [Wadi]
+      Entities:
+        - Name: CaveWormsGrey
+          Period: Always
+          Amount: 8
+          DelayMinMax: [0, 1]
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 8
+          DelayMinMax: [0, 1] 
+        - Name: ScraperDronesMixed 
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+          
+    - Biomes: [Oasis, Shore]
+      Entities:
+        - Name: Slimes
+          Period: Always
+          Amount: 20
+          Color: "1.0, 1.0, 0"
+          DelayMinMax: [20, 24]
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 8
+          # DelayMinMax: [20, 24]
+        - Name: Spiders02
+          Period: Night
+          Amount: 8
+          DelayMinMax: [0, 1]
+        - Name: RipperDogsWildGroup
+          Period: Day
+          Amount: 15
+          DelayMinMax: [0, 1]
+
+    - Biomes: [Flowers, FlowersEdge, Plantation]
+      Entities:
+        # - Name: AlienBugs01
+          # Period: Always
+          # Amount: 10
+          # DelayMinMax: [20, 24]
+        - Name: Spiders02
+          Period: Night
+          Amount: 20
+          DelayMinMax: [0, 2]
+        - Name: RipperDogsWildGroup
+          Period: Day
+          Amount: 60
+          DelayMinMax: [0, 1]
+
+    - Biomes: [Dunes, Sand, Plains, Plateau, DustBowl]
+      Entities:
+        - Name: WormDesertHerd  
+          Period: Always
+          Amount: 6
+          DelayMinMax: [0, 4]
+        - Name: WormDesertLargeHerd 
+          Period: Always
+          Amount: 6
+          DelayMinMax: [0, 4]
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 8
+          DelayMinMax: [0, 4]
+        - Name: Otyughs 
+          Period: Day
+          Amount: 10
+          DelayMinMax: [0, 4]
+        - Name: ScraperDronesMixed 
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+          
+    - Biomes: [LowMountains, LowMountains_1, SandDrift]
+      Entities:
+        - Name: CaveWormsGrey
+          Period: Always
+          Amount: 15
+          DelayMinMax: [0, 4]
+        - Name: GolemsDesert
+          Period: Night
+          Amount: 6
+          DelayMinMax: [0, 4]
+        - Name: ScraperDronesMixed 
+          Period: Always
+          Amount: 10
+          DelayMinMax: [0, 1]
+          
+    # - Biomes: [Dunes, Sand, Plains, Plateau, DustBowl, SandDrift]
+      # Entities:
+        # - Name: GlidingOverseers
+          # Period: Always
+          # Amount: 10
+          # DelayMinMax: [0, 4]
+
+    - Biomes: [Water, ShallowWater]
+      Entities: 
+        - Name: ShoalofFishesSmall
+          Period: Always
+          Amount: 10
+          AllowInWater: true
+          DelayMinMax: [0, 1]
+          Color: "1, 1.0, 0.0" 
