@@ -2873,7 +2873,7 @@ RailgunSlugCVT2,[c][FFF300]Medium Railgun Penetrator[-][/c],,,,,,,,,,[c][FFF300]
 RailgunSlugCVT3,[c][FFF300]Heavy Railgun Penetrator[-][/c],,,,,,,,,,[c][FFF300]重型轨道炮穿甲弹[-][/c],,,,,,
 35mmBullet,35x228mm Cannon Shell,,,,,,,,,,35x228mm炮弹,,,,,,
 FastRocketSVT3,[c][00FF00]Assault Shroud 80mm Missiles[-][/c],,,,,,,,,,[c][00FF00]突击隐形80mm导弹[-][/c],,,,,,
-TurretBAHeavyBlocks,Heavy Energy Turrets (Base),,,,,,,,,,重型能量炮台(基础),,,,,,
+TurretBAHeavyBlocks,Heavy Energy Turrets (Base),,,,,,,,,,重型能量炮台(基地),,,,,,
 TurretBAPlasmaT3,Heavy Plasma Turret,,,,,,,,,,重型等离子炮台,,,,,,
 TurretBAPositronT3,Positron Blaster Turret,,,,,,,,,,正电子爆破炮台,,,,,,
 DetectorSVT3,Long-Ranged Radar (Small),,,,,,,,,,长程雷达(小型),,,,,,
